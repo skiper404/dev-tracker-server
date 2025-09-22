@@ -4,6 +4,7 @@
   "main": "server.js",
   "scripts": {
     "dev": "nodemon ./src/server.js"
+    "start": "node server.js",
   },
   "type": "module",
   "dependencies": {
