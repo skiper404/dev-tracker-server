@@ -1,0 +1,23 @@
+# Node modules
+node_modules/
+
+# Environment variables
+.env
+
+# Logs
+logs/
+*.log
+
+# Build output (если есть)
+dist/
+build/
+
+# npm lock (опционально)
+package-lock.json
+
+# Mac / system files
+.DS_Store
+
+# IDE/editor files
+.vscode/
+.idea/
