@@ -11,6 +11,10 @@ app.use(express.json());
 app.use(morgan('dev'));
 app.use(router);
 
+app.get('/', (req, res) => {
+  res.status(200).json({ message: 'Server works!' });
+});
+
 const start = async () => {
   try {
     console.log('Starting server...');
