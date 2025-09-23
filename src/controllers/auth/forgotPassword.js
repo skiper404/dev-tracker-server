@@ -17,6 +17,7 @@ export const forgotPassword = async (req, res) => {
 
     const temporaryToken = jwt.sign({ id: existUser._id.toString() }, config.jwt.secret, { expiresIn: '10m' });
     const resend = new Resend(config.resend.apiKey);
+    const link = `http://${config.client_url}/en/reset-password?token=${temporaryToken}`;
 
     await resend.emails.send({
       from: 'Dev Tracker <onboarding@resend.dev>',
@@ -24,7 +25,7 @@ export const forgotPassword = async (req, res) => {
       subject: 'Reset Password',
       html: `
       <strong>Reset password</strong>
-      <a href="http://localhost:5173/en/reset-password?token=${temporaryToken}">Click here</a>
+      <a href="${link}">Click here</a>
     `,
     });
 
