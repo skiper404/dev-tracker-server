@@ -5,7 +5,7 @@ export const config = {
   app: {
     port: process.env.PORT || 3000,
   },
-  client_url: 'https://dev-tracker.onrender.com/',
+  client_url: process.env.CLIENT_URL || 'http://localhost:5173',
   jwt: { secret: process.env.JWT_SECRET },
   resend: { apiKey: process.env.RESEND_API_KEY },
   db: {
